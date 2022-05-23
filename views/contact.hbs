@@ -6,9 +6,11 @@
 </div>
 <div name='isSent'>
 	{{#if isSent}}
-		The message has been sent! File
-		{{fileName}}
-		has been saved !
+		<div class='isSent'>The message has been sent! File
+			{{fileName}}
+			has been saved !
+		</div>
+		<img src='/{{fileName}}' alt={{fileName}} />
 	{{/if}}
 </div>
 <form
