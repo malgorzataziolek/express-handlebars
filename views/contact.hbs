@@ -1,2 +1,42 @@
 <h2>Contact</h2>
-<p>Send me an email at programmer@example.com</p>
+<div name='isError'>
+	{{#if isError}}
+		You can't leave empty fields
+	{{/if}}
+</div>
+<div name='isSent'>
+	{{#if isSent}}
+		The message has been sent! File
+		{{fileName}}
+		has been saved !
+	{{/if}}
+</div>
+<form
+	action='/contact/send-message'
+	method='POST'
+	enctype='multipart/form-data'
+>
+	<label>
+		Your name:
+		<input type='text' name='author' />
+	</label>
+	<label>
+		Your email:
+		<input type='email' name='sender' />
+	</label>
+	<label>
+		Title:
+		<input type='text' name='title' />
+	</label>
+	<label>
+		Project design:
+		<input type='file' name='uploadFile' accept='.png, .jpg, .jpeg .gif' />
+	</label>
+	<label>
+		Message:
+		<textarea name='message'></textarea>
+	</label>
+
+	<button type='submit'>Send message</button>
+
+</form>
